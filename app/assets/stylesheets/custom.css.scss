@@ -2,6 +2,36 @@
 
 .navbar {
 
-    background-color: #FDF6EA !important;
+    background-color:black !important;
     
     }
+    .nav-link{
+        color: white !important;
+    }
+    #logo{
+        float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+    }
+    .jumbotron{
+        background-image: asset-url('background.jpg');
+        background-size: cover;
+        height: 470px;
+    }
+    html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgray;
+  margin: 25px;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+}

@@ -1,3 +1,7 @@
-<h1>Showing article detaisls</h1>
+<h1>Showing article details</h1>
 <p>Article title: <%= @article.title %> </p>
 <p>Article description: <%= @article.description %> </p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Delete', article_path(@article),method: :delete, data: {confirm: "Are you sure?"} %> |
+<%= link_to 'Return to All Articles list', articles_path %>

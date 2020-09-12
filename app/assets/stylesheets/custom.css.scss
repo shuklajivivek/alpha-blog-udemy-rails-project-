@@ -19,17 +19,17 @@
     .jumbotron{
         background-image: asset-url('background.jpg');
         background-size: cover;
-        height: 470px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 425px;
     }
     html,
 body {
   height: 100%;
 }
-
 #page-content {
   flex: 1 0 auto;
   background-color: lightgray;
-  margin: 25px;
 }
 
 #sticky-footer {
@@ -38,3 +38,7 @@ body {
 #ArticlesListing{
   background-color: rgb(173, 185, 194);
 }
+#home-container{
+  margin-top: 25px;
+ }
+ 

@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
 before_action :set_user, only: [:show, :edit, :update]
-
+before_action :require_user, only: [:edit, :update]
+before_action :require_same_user, only: [:edit, :update]
 def new
     @user = User.new
 end
@@ -44,4 +45,11 @@ end
  def set_user
     @user = User.find(params[:id])
  end
+
+ def require_same_user
+   if current_user != @user
+    flash[:alert] = "you can edit only your profile"
+ end
+end
+
 end

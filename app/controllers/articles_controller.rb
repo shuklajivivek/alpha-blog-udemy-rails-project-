@@ -1,6 +1,8 @@
 class ArticlesController < ApplicationController
 before_action :set_article, only: [:show, :edit, :update, :destroy]
-#the above action will run only for specified actions before any of the actions are about to execute
+before_action :require_user, except: [:show, :index]
+before_action :require_same_user, only: [:edit, :update, :destroy]
+
 def show   
 end
 def index
@@ -50,4 +52,13 @@ end
   def article_params
     params.require(:article).permit(:title, :description)
   end
+
+  def require_same_user
+    byebug
+    if current_user != @article.user
+      flash[:alert] = "you can edit or delete only your own article"
+      redirect_to @article
+    end
+  end
+
 end

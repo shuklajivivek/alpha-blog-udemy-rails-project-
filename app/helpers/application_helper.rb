@@ -7,12 +7,4 @@ module ApplicationHelper
       image_tag(gravatar_url,alt:user.username, class: "rounded shadow mx-auto d-block")
     end
 
-    def current_user
-      @current_user ||= User.find(session[:user_id]) if session[:user_id]
-      # ||= is used for memoization of @current_user variable
-    end
-
-    def logged_in?
-      !!current_user #here !! converts @current_user into boolean
-    end
 end

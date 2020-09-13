@@ -34,10 +34,11 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <%= link_to 'View Your profile', user_path(current_user), class: "dropdown-item"%>
             <%= link_to 'Edit your profile', edit_user_path(current_user), class: "dropdown-item" %>
+            <%= link_to 'Delete your profile', user_path(current_user), class: "dropdown-item", method: :delete %>
         </li>
         
       <li class="nav-item">
-        <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete %>
+        <%= link_to 'Logout', logout_path, class: "nav-link", method: :delete, data: {confirm: "Are you sure?"} %>
       </li>
       <% else %>
       <li class="nav-item">

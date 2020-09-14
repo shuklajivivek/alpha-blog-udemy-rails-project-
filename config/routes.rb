@@ -7,4 +7,5 @@ resources :users, except: [:new] #get all the routes for users except #new since
 get 'login', to:'sessions#new'
 post 'login', to:'sessions#create'
 delete 'logout', to:'sessions#destroy'
+resources :categories, except: [:destroy]
 end
